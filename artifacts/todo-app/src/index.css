@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  /* Blossomtask Theme - Warm, pastel, cozy */
+  --background: 20 50% 98%; /* Cream/warm white */
+  --foreground: 340 30% 20%; /* Deep warm brown/pink */
+  
+  --card: 0 0% 100%;
+  --card-foreground: 340 30% 20%;
+  --card-border: 340 20% 90%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 340 30% 20%;
+  --popover-border: 340 20% 90%;
+  
+  --primary: 340 60% 75%; /* Blush pink */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 10 50% 90%; /* Light peach */
+  --secondary-foreground: 340 40% 30%;
+  
+  --muted: 340 20% 95%; /* Soft pink grey */
+  --muted-foreground: 340 20% 50%;
+  
+  --accent: 280 40% 90%; /* Soft lavender */
+  --accent-foreground: 280 40% 30%;
+  
+  --destructive: 0 50% 75%; /* Soft red */
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 340 20% 90%;
+  --input: 340 20% 90%;
+  --ring: 340 60% 75%;
+  
+  --app-font-sans: 'Outfit', 'Inter', sans-serif;
+  --radius: 1rem;
+  
+  --shadow-sm: 0 2px 8px -2px rgba(230, 200, 210, 0.3);
+  --shadow: 0 4px 12px -2px rgba(230, 200, 210, 0.4);
+  --shadow-md: 0 8px 24px -4px rgba(230, 200, 210, 0.4);
+  --shadow-lg: 0 12px 32px -4px rgba(230, 200, 210, 0.5);
+}
+
+.dark {
+  --background: 340 20% 10%;
+  --foreground: 20 30% 90%;
+  
+  --card: 340 25% 15%;
+  --card-foreground: 20 30% 90%;
+  --card-border: 340 20% 25%;
+  
+  --popover: 340 25% 15%;
+  --popover-foreground: 20 30% 90%;
+  --popover-border: 340 20% 25%;
+  
+  --primary: 340 50% 65%;
+  --primary-foreground: 340 20% 10%;
+  
+  --secondary: 340 20% 25%;
+  --secondary-foreground: 20 30% 90%;
+  
+  --muted: 340 20% 20%;
+  --muted-foreground: 340 20% 70%;
+  
+  --accent: 280 30% 25%;
+  --accent-foreground: 280 30% 90%;
+  
+  --destructive: 0 40% 45%;
+  --destructive-foreground: 20 30% 90%;
+  
+  --border: 340 20% 25%;
+  --input: 340 20% 25%;
+  --ring: 340 50% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(at top right, rgba(255, 220, 230, 0.4) 0%, transparent 50%),
+                      radial-gradient(at bottom left, rgba(230, 210, 255, 0.3) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+}
